@@ -20,6 +20,10 @@ export function ProfileComposition() {
             <img
               src={site.profileImage}
               alt={`Portrait of ${site.name}`}
+              width={960}
+              height={1280}
+              fetchPriority="high"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
             />
           ) : (

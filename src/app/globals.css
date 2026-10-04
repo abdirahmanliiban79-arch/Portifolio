@@ -148,7 +148,6 @@ body::before {
       opacity 0.9s var(--ease-out-expo),
       transform 0.9s var(--ease-out-expo);
     transition-delay: var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
   }
 
   .reveal[data-visible="true"] {
@@ -170,14 +169,6 @@ body::before {
 
   .animate-caret {
     animation: caret-blink 1.1s step-end infinite;
-  }
-
-  .marquee-track {
-    animation: marquee-x 42s linear infinite;
-  }
-
-  .marquee:hover .marquee-track {
-    animation-play-state: paused;
   }
 }
 
@@ -213,15 +204,6 @@ body::before {
   }
 }
 
-@keyframes marquee-x {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -234,8 +216,7 @@ body::before {
   .animate-float,
   .animate-float-delayed,
   .animate-ping-slow,
-  .animate-caret,
-  .marquee-track {
+  .animate-caret {
     animation: none !important;
   }
 }
