@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "Zod",
     ],
     liveUrl:
-      "https://finance-trac-2xfr-bbf5x236q-abdirahmanliiban79-archs-projects.vercel.app",
+      "https://finance-trac-1nbur1ps0-abdirahmanliiban79-archs-projects.vercel.app/login",
     liveLabel: "Live Demo",
     githubUrl:
       "https://github.com/abdirahmanliiban79-arch/finance-trac/tree/main",
@@ -109,8 +109,7 @@ export const projects: Project[] = [
       "Prisma",
       "Tailwind CSS",
     ],
-    liveUrl:
-      "https://taskflow-i6ehw8own-abdirahmanliiban79-archs-projects.vercel.app",
+    liveUrl: "https://taskflow-zeta-beryl.vercel.app/",
     liveLabel: "Live Demo",
     githubUrl: "https://github.com/abdirahmanliiban79-arch/TaskFlow",
     githubLabel: "GitHub",
