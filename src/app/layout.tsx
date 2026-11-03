@@ -1,23 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
 import { site } from "@/data/site";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import "./globals.css";
 
-const instrument = Instrument_Sans({
-  variable: "--font-instrument-sans",
+const display = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const sans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const mono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${instrument.variable} ${inter.variable} ${jetbrains.variable} antialiased`}
+      className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
     >
       <body className="min-h-dvh bg-ink font-sans text-white">
         <a href="#main" className="skip-link">
