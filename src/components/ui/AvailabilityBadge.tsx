@@ -17,8 +17,8 @@ export function AvailabilityBadge({
       )}
     >
       <span className="relative flex size-2" aria-hidden="true">
-        <span className="absolute inline-flex size-full animate-ping-slow rounded-full bg-coral-rose" />
-        <span className="relative inline-flex size-2 rounded-full bg-coral-strong" />
+        <span className="absolute inline-flex size-full animate-ping-slow rounded-full bg-gold-light" />
+        <span className="relative inline-flex size-2 rounded-full bg-gold-bright" />
       </span>
       <span className="font-mono text-[10px] tracking-[0.22em] text-secondary uppercase">
         {label}

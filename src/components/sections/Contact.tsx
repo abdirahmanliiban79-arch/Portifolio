@@ -66,7 +66,7 @@ function ChannelRow({ channel }: { channel: Channel }) {
   const rowClassName = cn(
     "group flex items-center gap-4 rounded-2xl border px-5 py-4 transition-all duration-300",
     isLink
-      ? "border-white/[0.08] bg-white/[0.03] hover:border-coral/30 hover:bg-white/[0.05]"
+      ? "border-white/[0.08] bg-white/[0.03] hover:border-gold/30 hover:bg-white/[0.05]"
       : "border-dashed border-white/15 bg-white/[0.03] opacity-60",
   );
 
@@ -75,7 +75,7 @@ function ChannelRow({ channel }: { channel: Channel }) {
       <span
         className={cn(
           "flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05]",
-          isLink ? "text-coral" : "text-muted",
+          isLink ? "text-gold" : "text-muted",
         )}
       >
         <Icon className="size-4" />
@@ -89,7 +89,7 @@ function ChannelRow({ channel }: { channel: Channel }) {
             {channel.value}
           </span>
         ) : (
-          <span className="block font-mono text-[10px] text-coral">
+          <span className="block font-mono text-[10px] text-gold">
             Add link
           </span>
         )}
@@ -128,13 +128,17 @@ export function Contact() {
       <div className="relative">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-coral/[0.06] blur-[120px]"
+          className="pointer-events-none absolute -bottom-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/[0.06] blur-[120px]"
         />
         <SectionHeading
           id="contact-title"
-          eyebrow="05 / Contact"
-          title="Have a problem worth solving?"
-          lead="If you're building something meaningful and need someone who can think across the product, frontend, backend, and data layer, let's talk."
+          eyebrow="06 / Contact"
+          title={
+            <>
+              {"Let's build"} <span className="text-gold-gradient">something.</span>
+            </>
+          }
+          lead="Hiring for your team or need a product built? Send a message and I'll get back to you within a day."
           align="center"
         />
         <div className="relative mt-16 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
@@ -159,8 +163,8 @@ export function Contact() {
           </div>
         </div>
         <p className="relative mt-16 text-center font-mono text-[10px] tracking-[0.3em] text-muted uppercase">
-          Frontend precision <span className="text-coral/60">·</span> Backend
-          architecture <span className="text-coral/60">·</span> Product thinking
+          Frontend precision <span className="text-gold/60">·</span> Backend
+          architecture <span className="text-gold/60">·</span> Product thinking
         </p>
       </div>
     </Section>

@@ -50,7 +50,7 @@ export function MobileMenu({ open, links, onClose }: MobileMenuProps) {
                 <span className="font-mono text-[11px] tracking-[0.3em] text-muted">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="font-display text-4xl font-medium text-white transition-colors duration-300 group-hover:text-coral sm:text-5xl">
+                <span className="font-display text-4xl font-medium text-white transition-colors duration-300 group-hover:text-gold sm:text-5xl">
                   {link.label}
                 </span>
               </a>

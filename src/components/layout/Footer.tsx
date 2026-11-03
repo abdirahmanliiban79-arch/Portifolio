@@ -43,7 +43,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${social.label} profile`}
-                    className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] transition-all duration-300 hover:border-coral/40 hover:text-white"
+                    className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] transition-all duration-300 hover:border-gold/40 hover:text-white"
                   >
                     <Icon className="size-4 text-secondary" />
                   </a>
@@ -52,7 +52,7 @@ export function Footer() {
             <a
               href={`mailto:${site.email}`}
               aria-label={`Email ${site.name}`}
-              className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] transition-all duration-300 hover:border-coral/40 hover:text-white"
+              className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] transition-all duration-300 hover:border-gold/40 hover:text-white"
             >
               <MailIcon className="size-4 text-secondary" />
             </a>
@@ -67,7 +67,7 @@ export function Footer() {
             className="group inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.25em] text-muted uppercase transition-colors hover:text-white"
           >
             Back to top
-            <ArrowUpRightIcon className="size-3.5 text-coral transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRightIcon className="size-3.5 text-gold transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>

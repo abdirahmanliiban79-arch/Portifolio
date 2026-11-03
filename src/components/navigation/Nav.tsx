@@ -5,10 +5,13 @@ import { cn } from "@/lib/cn";
 import { site } from "@/data/site";
 import { AvailabilityBadge } from "@/components/ui/AvailabilityBadge";
 import { MobileMenu } from "@/components/navigation/MobileMenu";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 
 const links = [
-  { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Agentic", href: "#agentic" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -16,6 +19,7 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const wasOpenRef = useRef(false);
 
@@ -24,6 +28,23 @@ export function Nav() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Highlight the link for the section currently in the middle of the screen
+  useEffect(() => {
+    const sections = links
+      .map((link) => document.querySelector<HTMLElement>(link.href))
+      .filter((node): node is HTMLElement => node !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -60,6 +81,7 @@ export function Nav() {
 
   return (
     <>
+      <ScrollProgress />
       <header
         className={cn(
           "fixed inset-x-0 top-0 py-3",
@@ -79,13 +101,13 @@ export function Nav() {
               href="#main"
               className="flex items-center gap-2 transition-opacity duration-300 hover:opacity-80"
             >
-              <span className="font-mono text-sm font-semibold tracking-[0.18em] text-coral-gradient">
+              <span className="font-mono text-sm font-semibold tracking-[0.18em] text-gold-gradient">
                 {site.initials}
               </span>
               <span aria-hidden="true" className="font-mono text-sm text-muted">
                 /
               </span>
-              <span className="hidden font-display text-sm font-medium tracking-wide text-white sm:inline">
+              <span className="hidden font-display text-sm font-medium tracking-wide text-white lg:inline">
                 {site.name}
               </span>
             </a>
@@ -99,7 +121,13 @@ export function Nav() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="block rounded-full px-3 py-2 text-sm text-secondary transition-colors duration-300 hover:bg-white/[0.05] hover:text-white"
+                      aria-current={active === link.href ? "location" : undefined}
+                      className={cn(
+                        "block rounded-full px-3 py-2 text-sm transition-colors duration-300 hover:bg-white/[0.05] hover:text-white",
+                        active === link.href
+                          ? "bg-white/[0.06] text-white"
+                          : "text-secondary",
+                      )}
                     >
                       {link.label}
                     </a>

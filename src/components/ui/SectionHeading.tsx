@@ -23,7 +23,7 @@ export function SectionHeading({
     <Reveal
       className={cn("max-w-3xl", align === "center" && "mx-auto", className)}
     >
-      <p className="font-mono text-[11px] uppercase tracking-[0.32em] text-coral">
+      <p className="font-mono text-[11px] uppercase tracking-[0.32em] text-gold">
         {eyebrow}
       </p>
       <h2

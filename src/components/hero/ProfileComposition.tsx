@@ -7,7 +7,7 @@ export function ProfileComposition() {
     <div className="relative mx-auto w-full max-w-[22rem] lg:max-w-[24rem]">
       <div
         aria-hidden="true"
-        className="absolute -inset-8 rounded-full bg-coral/[0.14] blur-[90px]"
+        className="absolute -inset-8 rounded-full bg-gold/[0.14] blur-[90px]"
       />
       <div
         aria-hidden="true"
@@ -31,9 +31,9 @@ export function ProfileComposition() {
               <div aria-hidden="true" className="absolute inset-0 bg-grid-sm" />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,160,122,0.16),transparent_60%)]"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.16),transparent_60%)]"
               />
-              <span className="relative font-display text-8xl/[9rem] font-medium text-coral-gradient">
+              <span className="relative font-display text-8xl/[9rem] font-medium text-gold-gradient">
                 {site.initials}
               </span>
               <p className="absolute inset-x-0 bottom-0 px-4 pb-3 text-center font-mono text-[8px] tracking-[0.14em] text-muted/70">
@@ -53,13 +53,13 @@ export function ProfileComposition() {
       </div>
 
       <FloatingChip
-        icon={<SparkleIcon className="size-4 text-coral" />}
-        title="Autonomous Builder"
-        subtitle="builds end-to-end"
+        icon={<SparkleIcon className="size-4 text-gold" />}
+        title="Agentic Coding"
+        subtitle="ships with AI agents"
         className="top-0 left-0 -translate-x-2 -translate-y-2 sm:-translate-x-3"
       />
       <FloatingChip
-        icon={<LayersIcon className="size-4 text-coral" />}
+        icon={<LayersIcon className="size-4 text-gold" />}
         title="Problem Solver"
         subtitle="thinks in systems"
         float="delayed"
@@ -75,7 +75,7 @@ export function ProfileComposition() {
           </span>
         <span
           aria-hidden="true"
-          className="animate-caret ml-0.5 inline-block h-3 w-1.5 shrink-0 bg-coral-strong align-middle"
+          className="animate-caret ml-0.5 inline-block h-3 w-1.5 shrink-0 bg-gold-bright align-middle"
         />
       </div>
     </div>

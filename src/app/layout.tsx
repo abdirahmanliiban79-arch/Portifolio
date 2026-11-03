@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/data/site";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import "./globals.css";
 
 const instrument = Instrument_Sans({
@@ -22,16 +23,38 @@ const jetbrains = JetBrains_Mono({
 });
 
 const description =
-  "Full-Stack Software Engineer building modern web applications, scalable backends, and products that solve real problems. Frontend precision. Backend architecture. Product thinking.";
+  "Full-Stack Software Engineer building web apps, APIs, and dashboards for startups, logistics, finance, and e-commerce. Ships fast with AI coding agents. Available for full-time roles and freelance projects.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  email: `mailto:${site.email}`,
+  url: site.url,
+  image: site.profileImage ? `${site.url}${site.profileImage}` : undefined,
+  sameAs: site.socials.map((social) => social.href),
+  knowsAbout: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB"],
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   title: {
     default: `${site.name} — Full-Stack Software Engineer`,
     template: `%s — ${site.name}`,
   },
   description,
   keywords: [
+    site.name,
     "Full-Stack Software Engineer",
+    "Freelance Web Developer",
+    "Hire Full-Stack Developer",
+    "Logistics Software Developer",
+    "Dashboard Development",
+    "Agentic Coding",
+    "AI-Assisted Development",
+    "Claude Code",
     "Next.js Developer",
     "React Developer",
     "Node.js",
@@ -45,6 +68,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: "/",
     title: `${site.name} — Full-Stack Software Engineer`,
     description,
     siteName: site.name,
@@ -63,7 +87,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#181C24",
+  themeColor: "#0A0A0A",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -76,7 +100,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        />
       </body>
     </html>
   );
